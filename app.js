@@ -25,4 +25,13 @@ const argv = yargs
 //   }
 // });
 
-weather.getWeather();
+
+//pass in lat, lng, callback
+weather.getWeather(39.524489, -119.717457, (errorMessage, weatherResults) => {
+  if (error) {
+    console.log(errorMessage);
+  } else {
+    console.log(JSON.stringify(weatherResults, undefined, 2));
+  }
+
+});
