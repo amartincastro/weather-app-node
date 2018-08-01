@@ -37,6 +37,8 @@ request({
 }, (error, response, body) => {
   if (error) {
     console.log('Unable to connect to the Dark Sky API servers.');
+  } else if (response.statusCode == 400) {
+    console.log('Unable to fetch weather.');
   }
   console.log(body.currently.temperature);
 });
